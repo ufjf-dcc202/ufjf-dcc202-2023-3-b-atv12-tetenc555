@@ -13,14 +13,17 @@
         <section>
             <form name="entrada">
                 <input type="number" name="quantidade" value="5" min="0" max="12">
-                <label>
-                    <input type="radio" name="origem" value="maria">
-                    Maria
-                </label>
-                <label>
-                    <input type="radio" name="origem" value="joao">
-                    João
-                </label>
+                <fieldset>
+                    <legend>Origem</legend>
+                    <label>
+                        <input type="radio" name="origem" value="Maria">
+                        Maria
+                    </label>
+                    <label>
+                        <input type="radio" name="origem" value="Joao">
+                        João
+                    </label>
+                </fieldset>
                 <select name="fruta">
                     <option value="Maçãs">Maçãs</option>
                     <option value="Peras">Peras</option>
