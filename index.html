@@ -16,6 +16,10 @@
                 <fieldset>
                     <legend>Origem</legend>
                     <label>
+                        <input type="radio" name="origem" value="Pomar">
+                        Pomar
+                    </label>
+                    <label>
                         <input type="radio" name="origem" value="Maria">
                         Maria
                     </label>
@@ -27,23 +31,27 @@
                 <fieldset>
                     <legend>Destino</legend>
                     <label>
-                        <input type="radio" name="origem" value="Maria">
+                        <input type="radio" name="destino" value="Pomar">
+                        Pomar
+                    </label>
+                    <label>
+                        <input type="radio" name="destino" value="Maria">
                         Maria
                     </label>
                     <label>
-                        <input type="radio" name="origem" value="João">
+                        <input type="radio" name="destino" value="João">
                         João
                     </label>
                 </fieldset>
                 <select name="fruta">
-                    <option value="Maçãs">Maçãs</option>
-                    <option value="Peras">Peras</option>
+                    <option value="Maçã">Maçãs</option>
+                    <option value="Pera">Peras</option>
                     <option value="Banana">Banana</option>
                 </select>
                 <button type="submit" name="enviar">Enviar</button>
             </form>
         </section>
-        <section id="saída">
+        <section id="saida">
             <h2>João</h2>
             <ol id="joao"></ol>
             <h2>Maria</h2>
