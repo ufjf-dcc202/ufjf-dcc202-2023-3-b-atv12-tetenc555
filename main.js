@@ -6,6 +6,6 @@ function leFormulario(event){
     const quantidade= document.entrada.quantidade.value;
     const fruta= document.entrada.fruta.value;
     const origem=document.entrada.origem.value;
-
-    console.log(`${origem} tem ${quantidade} ${fruta}`);
+    const destino=document.entrada.destino.value;
+    console.log(`${origem} tem ${quantidade} ${fruta} para ${destino}`);
 }
