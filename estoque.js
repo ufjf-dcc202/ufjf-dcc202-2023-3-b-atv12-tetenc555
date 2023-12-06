@@ -13,4 +13,20 @@ function getEstoque(){
     return structuredClone(estoque);
 }
 
-export {getEstoque};
+function transacaoNoEstoque(origem,destino,tipo,quantidade)
+{
+    if(destino==='pomar')
+    {
+        const pessoa =estoque[origem]
+        for (let i=0;i<estoque[origem].length;i++)
+        {
+            const monte = pessoa[i];
+            if(monte.tipo === tipo)
+            {
+                monte.qtd -= quantidade;
+            }
+        }    
+    }
+}
+
+export {getEstoque,transacaoNoEstoque};
