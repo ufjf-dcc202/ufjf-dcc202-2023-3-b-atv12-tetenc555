@@ -12,7 +12,6 @@ function getEstoque() {
 }
 
 function transacaoNoEstoque(origem, destino, tipo, quantidade) {
-    verifEstoque();
     if (origem === destino) {
         return;
     }
@@ -26,8 +25,8 @@ function transacaoNoEstoque(origem, destino, tipo, quantidade) {
         console.log(`${origem} doa ${quantidade} ${tipo} para ${destino}`);
         return;
     }
-    const pessoaOrigem = estoque[origem];
-    const pessoaDestino = estoque[destino];
+    let pessoaOrigem = buscaOuCria(origem);
+    let pessoaDestino = buscaOuCria(destino);
     let monteOrigem;
     for (let i = 0; i < pessoaOrigem.length; i++) {
         const monte = pessoaOrigem[i];
@@ -58,7 +57,7 @@ function transacaoNoEstoque(origem, destino, tipo, quantidade) {
 }
 
 function dePomarParaPessoa(destino, tipo, quantidade) {
-    const pessoa = estoque[destino];
+    const pessoa = buscaOuCria(destino);
     for (let i = 0; i < pessoa.length; i++) {
         const monte = pessoa[i];
         if (monte.tipo === tipo) {
@@ -68,6 +67,15 @@ function dePomarParaPessoa(destino, tipo, quantidade) {
     }
     const novoMonte = { 'tipo': tipo, 'quantidade': Math.max(quantidade, 0) };
     pessoa.push(novoMonte);
+}
+
+function buscaOuCria(nome) {
+    let pessoa  = estoque[nome];
+    if(!pessoa) {
+        pessoa = [];
+        estoque[nome] = pessoa;
+    }
+    return estoque[nome];
 }
 
 function dePessoaParaPomar(origem, tipo, quantidade) {
@@ -84,10 +92,4 @@ function limpaEstoque() {
     estoque = {};
 }
 
-function verifEstoque() {
-    if (Object.keys(estoque).length === 0)  { // verifica se o objeto estoque esta vazio
-        estoque.joao = [];
-        estoque.maria = [];
-    }
-}
 export {getEstoque,transacaoNoEstoque,limpaEstoque};
