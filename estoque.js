@@ -78,7 +78,7 @@ function dePessoaParaPomar(origem, tipo, quantidade) {
 
 function limpaEstoque () 
 {
-    estoque.joao = [];
-    estoque.maria = [];
+    estoque={};
+    
 }
 export {getEstoque,transacaoNoEstoque,limpaEstoque};

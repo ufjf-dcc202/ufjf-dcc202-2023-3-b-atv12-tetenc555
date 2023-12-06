@@ -1,8 +1,9 @@
-import {getEstoque,transacaoNoEstoque} from "./estoque.js";
+import {getEstoque,transacaoNoEstoque,limpaEstoque} from "./estoque.js";
 document.entrada.addEventListener('submit',leFormulario);
 const olJoao = document.querySelector("ol#joao");
 const olMaria = document.querySelector("ol#maria");
-
+const btnLimpar = document.querySelector("#limpar");
+btnLimpar.addEventListener('click',limpaLista);
 atualizaTela();
 
 function leFormulario(event){
@@ -29,7 +30,13 @@ function preencheLista(lista,estoqueDaPessoa)
     {
         const monte = estoqueDaPessoa[i];
         const li = document.createElement("li");
-        li.textContent = `${monte.tipo}: ${monte.qtd}`;
+        li.textContent = `${monte.tipo}: ${monte.quantidade}`;
         lista.append(li);
     }
+}
+
+function limpaLista(){
+    limpaEstoque();
+    olJoao.innerHTML = "";
+    olMaria.innerHTML = "";
 }
