@@ -18,10 +18,12 @@ function transacaoNoEstoque(origem, destino, tipo, quantidade) {
     }
     if (destino === 'pomar') {
         dePessoaParaPomar(origem, tipo, quantidade);
+        console.log(`${origem} doa ${quantidade} ${tipo} para ${destino}`);
         return;
     }
     if (origem === 'pomar') {
         dePomarParaPessoa(destino, tipo, quantidade);
+        console.log(`${origem} doa ${quantidade} ${tipo} para ${destino}`);
         return;
     }
     const pessoaOrigem = estoque[origem];
@@ -52,6 +54,7 @@ function transacaoNoEstoque(origem, destino, tipo, quantidade) {
     const qtdReal = Math.min(quantidade, monteOrigem.quantidade);
     monteDestino.quantidade += qtdReal;
     monteOrigem.quantidade -= qtdReal;
+    console.log(`${origem} doa ${quantidade} ${tipo} para ${destino}`);
 }
 
 function dePomarParaPessoa(destino, tipo, quantidade) {

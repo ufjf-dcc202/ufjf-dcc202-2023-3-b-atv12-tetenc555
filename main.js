@@ -12,7 +12,6 @@ function leFormulario(event){
     const fruta= document.entrada.fruta.value;
     const origem=document.entrada.origem.value;
     const destino=document.entrada.destino.value;
-    console.log(`${origem} doa ${quantidade} ${fruta} para ${destino}`);
     transacaoNoEstoque(origem,destino,fruta,quantidade);
     atualizaTela();
 }
