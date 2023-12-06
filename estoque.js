@@ -23,7 +23,7 @@ function transacaoNoEstoque(origem,destino,tipo,quantidade)
             const monte = pessoa[i];
             if(monte.tipo === tipo)
             {
-                monte.qtd -= quantidade;
+                monte.qtd -= Math.min(quantidade,monte.qtd);
             }
         }    
     }
