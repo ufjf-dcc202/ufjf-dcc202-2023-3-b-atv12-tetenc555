@@ -12,6 +12,7 @@ function getEstoque() {
 }
 
 function transacaoNoEstoque(origem, destino, tipo, quantidade) {
+    verifEstoque();
     if (origem === destino) {
         return;
     }
@@ -76,9 +77,14 @@ function dePessoaParaPomar(origem, tipo, quantidade) {
     }
 }
 
-function limpaEstoque () 
-{
-    estoque={};
-    
+function limpaEstoque() {
+    estoque = {};
+}
+
+function verifEstoque() {
+    if (Object.keys(estoque).length === 0)  { // verifica se o objeto estoque esta vazio
+        estoque.joao = [];
+        estoque.maria = [];
+    }
 }
 export {getEstoque,transacaoNoEstoque,limpaEstoque};
