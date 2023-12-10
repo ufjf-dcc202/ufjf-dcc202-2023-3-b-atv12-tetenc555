@@ -15,41 +15,40 @@
                 <fieldset>
                     <legend>Origem</legend>
                     <label>
-                        <input type="radio" name="origem" value="pomar">
+                        <input type="radio" name="origem" value="pomar" checked/>
                         Pomar
                     </label>
-                    <label>
-                        <input type="radio" name="origem" value="joao">
-                        Joao
+                    <label>                
+                        <input type="radio" name="origem" value="joao"/>
+                        João
                     </label>
                     <label>
-                        <input type="radio" name="origem" value="maria">
+                        <input type="radio" name="origem" value="maria" checked/>
                         Maria
                     </label>
                 </fieldset>
                 <fieldset>
                     <legend>Destino</legend>
                     <label>
-                        <input type="radio" name="destino" value="pomar">
+                        <input type="radio" name="destino" value="pomar" checked/>
                         Pomar
                     </label>
-                    <label>
-                        <input type="radio" name="destino" value="joao">
+                    <label>                
+                        <input type="radio" name="destino" value="joao"/>
                         João
                     </label>
                     <label>
-                        <input type="radio" name="destino" value="maria">
+                        <input type="radio" name="destino" value="maria"checked/>
                         Maria
                     </label>
                 </fieldset>
-                <input type="number" name="quantidade" value="1" min="0" max="12" step="1">
+                <input type = "number" name="quantidade" value="1" min="0" max="12" step="1">
                 <select name="fruta">
                     <option value="maca">Maçã</option>
                     <option value="pera">Pera</option>
                     <option value="banana">Banana</option>
                 </select>
                 <button type="submit" name="enviar">Enviar</button>
-                <button id="limpar">Limpar Lista</button>
             </form>
         </section>
         <section id="saida">
@@ -60,4 +59,5 @@
         </section>
     </main>
 </body>
+<button type="button" id="buttonLimparLista">Limpar Lista</button>
 </html>
